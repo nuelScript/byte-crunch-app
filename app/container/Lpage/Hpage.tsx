@@ -9,7 +9,7 @@ const Hpage = () => {
     <div className="bg-yellow-200">
       <Container>
         <div className=" md:flex justify-between items-center">
-          <div className="px-1 md:flex flex-col flex-1 px-44">
+          <div className="px-0 md:flex flex-col flex-1 px-44">
             <h4 className="py-4 font-bold">Home Page</h4>
             <p className="py-2">Beautiful laid out home page including,</p>
            <div className="px-2 md:px-4">

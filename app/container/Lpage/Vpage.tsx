@@ -12,7 +12,7 @@ const Vpage = () => {
                     <div className="hidden md:flex flex-1 justify-center items-center py-40">
                         <Image alt="Vendor_page" src={second} className="w-full h-full" />
                     </div>
-                    <div className="px-1 md:flex flex-col flex-1 px-44">
+                    <div className="px-0 md:flex flex-col flex-1 px-44">
                         <h4 className="py-4 font-bold">Vendour Page</h4>
                         <p className="py-2">Welcome to the Vendors Page on Byte & Crunch! Here,you'll find a wide array of vendors offering delicious meals and delightful treats. Let us guide you through the features and options available on this page.</p>
                         <div className="px-3">

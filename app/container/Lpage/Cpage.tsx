@@ -9,7 +9,7 @@ const Cpage = () => {
         <div className="bg-yellow-200">
             <Container>
                 <div className="flex justify-between items-center">
-                    <div className="px-1 md:flex flex-col flex-1 px-44">
+                    <div className="px-0 md:flex flex-col flex-1 px-44">
                         <h4 className="py-4 font-bold">Check Out/Cart Page</h4>
                         <p className="py-2">Welcome to the Checkout Page on Byte & Crunch! Here,you can review your selected items, finalize your order,and make a secure payment. Let's walk you through the features and options available on this page.</p>
                         <div className="px-4">
