@@ -24,7 +24,7 @@ const About = () => {
                     <Image src={placeholder} alt="laptop" className=""/>
                 </div>
             </div>
-                <div className=" md:py-5 px-12 ">
+                <div className="px-0 md:py-5 px-12 ">
                     <h4 className="pb-2 font-bold">About</h4>
                     <p className="leading-6">Byte Crunch is a cutting-edge mobile application designed exclusively for students at Covenant University,aimed at enhancing their dining experience by eliminating the need to wait in long lines. Our app prioritizes convenience, efficiency, and seamless food ordering, ensuring that students can access their favorite meals from various on-campus eateries with just a few taps on their smartphones.</p>
                 </div>
