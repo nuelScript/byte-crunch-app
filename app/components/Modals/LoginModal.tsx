@@ -7,17 +7,17 @@ import { FieldValues, SubmitHandler, useForm } from "react-hook-form";
 
 import useRegisterModal from "@/app/hooks/useRegisterModal";
 import Modal from "./Modal";
-import Heading from "../Heading";
+import Heading from "../Heading/Heading";
 import Input from "../Inputs/Input";
 import { toast } from "react-hot-toast";
-import Button from "../Button";
+import Button from "../Button/Button";
 import useLoginModal from "@/app/hooks/useLoginModal";
 import { useRouter } from "next/navigation";
 
 const LoginModal = () => {
     const router = useRouter();
     const registerModal = useRegisterModal();
-    const loginModal = useLoginModal(); 
+    const loginModal = useLoginModal();
     const [isLoading, setIsLoading] = useState(false);
 
     const {
@@ -38,19 +38,19 @@ const LoginModal = () => {
             ...data,
             redirect: false,
         })
-        .then((callback) => {
-            setIsLoading(false);
+            .then((callback) => {
+                setIsLoading(false);
 
-            if(callback?.ok) {
-                toast.success("Logged in");
-                router.refresh();
-                loginModal.onClose();
-            } 
-            
-            if(callback?.error) {
-                toast.error(callback.error);
-            }
-        })
+                if (callback?.ok) {
+                    toast.success("Logged in");
+                    router.refresh();
+                    loginModal.onClose();
+                }
+
+                if (callback?.error) {
+                    toast.error(callback.error);
+                }
+            })
     };
 
     const bodyContent = (

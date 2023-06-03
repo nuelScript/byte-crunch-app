@@ -28,7 +28,7 @@ const Search = () => {
                     px-6
                 "
                 >
-                    Hello
+                    Welcome
                 </div>
                 <div className="
                     hidden
@@ -41,7 +41,7 @@ const Search = () => {
                     text-center
                 "
                 >
-                    World!
+                    To Bytes & Crunch
                 </div>
                 <div className="
                     text-sm

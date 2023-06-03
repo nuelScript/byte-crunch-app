@@ -2,7 +2,7 @@
 
 import { useEffect, useState, useCallback } from 'react';
 import { IoMdClose } from 'react-icons/io';
-import Button from '../Button';
+import Button from '../Button/Button';
 
 interface ModalProps {
     isOpen?: boolean;
@@ -36,7 +36,7 @@ const Modal: React.FC<ModalProps> = ({
     }, [isOpen]);
 
     const handleClose = useCallback(() => {
-        if(disabled) {
+        if (disabled) {
             return;
         }
 
@@ -47,25 +47,25 @@ const Modal: React.FC<ModalProps> = ({
     }, [disabled, onClose]);
 
     const handleSubmit = useCallback(() => {
-        if(disabled) {
+        if (disabled) {
             return;
         }
         onSubmit();
     }, [disabled, onSubmit]);
 
     const handleSecondaryAction = useCallback(() => {
-        if(disabled || !secondaryAction) {
+        if (disabled || !secondaryAction) {
             return;
         }
         secondaryAction();
     }, [disabled, secondaryAction]);
 
-    if(!isOpen) {
+    if (!isOpen) {
         return null;
     }
-    return ( 
+    return (
         <>
-            <div 
+            <div
                 className='
                     justify-center
                     items-center
@@ -79,9 +79,9 @@ const Modal: React.FC<ModalProps> = ({
                     focus:outline-none
                     bg-neutral-800/70
                 '
-            >   
+            >
                 {/* CONTENT */}
-                <div 
+                <div
                     className='
                         relative
                         w-full
@@ -95,7 +95,7 @@ const Modal: React.FC<ModalProps> = ({
                         md:h-auto
                     '
                 >
-                    <div 
+                    <div
                         className={`
                             translate
                             duration-300
@@ -121,7 +121,7 @@ const Modal: React.FC<ModalProps> = ({
                             focus:outline-none
                         '>
                             {/* HEADER */}
-                            <div 
+                            <div
                                 className='
                                 flex
                                 items-center
@@ -130,11 +130,11 @@ const Modal: React.FC<ModalProps> = ({
                                 justify-center
                                 relative
                                 border-b-[1px]
-                                '                        
+                                '
                             >
-                                <button 
-                                onClick={handleClose}
-                                className='
+                                <button
+                                    onClick={handleClose}
+                                    className='
                                     p-1
                                     border-0
                                     hover:opacity-70
@@ -143,7 +143,7 @@ const Modal: React.FC<ModalProps> = ({
                                     left-9
                                 '
                                 >
-                                    <IoMdClose size={18}/>
+                                    <IoMdClose size={18} />
                                 </button>
                                 <div className='text-lg font-semibold'>
                                     {title}
@@ -165,17 +165,17 @@ const Modal: React.FC<ModalProps> = ({
                                 '
                                 >
                                     {secondaryAction && secondaryActionLabel && (
-                                        <Button 
+                                        <Button
                                             outline
                                             disabled={disabled}
                                             label={secondaryActionLabel}
-                                            onClick={handleSecondaryAction} 
+                                            onClick={handleSecondaryAction}
                                         />
                                     )}
-                                    <Button 
-                                       disabled={disabled}
-                                       label={actionLabel}
-                                       onClick={handleSubmit} 
+                                    <Button
+                                        disabled={disabled}
+                                        label={actionLabel}
+                                        onClick={handleSubmit}
                                     />
                                 </div>
                                 {footer}
@@ -185,7 +185,7 @@ const Modal: React.FC<ModalProps> = ({
                 </div>
             </div>
         </>
-     );
+    );
 }
- 
+
 export default Modal;
