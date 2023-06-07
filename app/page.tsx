@@ -1,9 +1,3 @@
-import Image from 'next/image'
-
 export default function Home() {
-  return (
-    <div>
-      Byte & Crunch
-    </div>
-  )
+  return <div>Byte & Crunch</div>;
 }
