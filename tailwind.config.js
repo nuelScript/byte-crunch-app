@@ -18,6 +18,10 @@ module.exports = {
       },
       colors: {
         buttoncolor: "#F79327",
+        primarycolor2: "#FFF0AA",
+        neutralcolor1: "D9D9D9",
+        neutralcolor2: "#FFFFFF",
+        neutralcolor3: "#000000",
       },
       animation: {
         "slide-down": "slideDown 0.5s ease-in-out forwards",

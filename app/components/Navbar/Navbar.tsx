@@ -5,6 +5,7 @@ import Logo from "./Logo";
 import Search from "./Search";
 import UserMenu from "./UserMenu";
 import { SafeUser } from "@/app/types";
+import { AiOutlineShopping } from "react-icons/ai";
 
 interface NavbarProps {
   currentUser?: SafeUser | null;
@@ -32,6 +33,10 @@ const Navbar: React.FC<NavbarProps> = ({ currentUser }) => {
             <Logo />
             <Search />
             <UserMenu currentUser={currentUser} />
+            <button className="cart-icon" type="button">
+              <AiOutlineShopping />
+              <span className="cart-item-qty">1</span>
+            </button>            
           </div>
         </Container>
       </div>

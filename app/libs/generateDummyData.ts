@@ -1,5 +1,5 @@
 import { faker } from "@faker-js/faker";
-import { Product } from "../types";
+import { Order, Product } from "../types";
 // Generate dummy product from product type
 export const generateDummyProduct = (): Product => {
   return {
@@ -19,7 +19,16 @@ export const generateDummyProduct = (): Product => {
 export const generateDummyOrder = (product: Product) => {
   return {
     product,
-    quantity: Math.floor(Math.random() * 10),
+    quantity: Math.floor(Math.random() * 10 + 1),
     total: Math.floor(Math.random() * 1000),
   };
+};
+
+export const getRandomOrders = () => {
+  let result: Order[] = [];
+  for (let i = 0; i < 5; i++) {
+    let randomProduct = generateDummyProduct();
+    result.push(generateDummyOrder(randomProduct));
+  }
+  return result;
 };
