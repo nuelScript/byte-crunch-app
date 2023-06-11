@@ -33,9 +33,9 @@ const Navbar: React.FC<NavbarProps> = ({ currentUser }) => {
             <Logo />
             <Search />
             <UserMenu currentUser={currentUser} />
-            <button className="cart-icon" type="button">
+            <button className="relative text-gray-500 text-2xl cursor-pointer transition-transform hover:scale-110 bg-transparent border-none" type="button">
               <AiOutlineShopping />
-              <span className="cart-item-qty">1</span>
+              <span className="absolute -right-2 -top-2 text-xs text-white bg-red-500 w-[18px] h-[18px] rounded-full text-center font-semibold">1</span>
             </button>            
           </div>
         </Container>

@@ -1,4 +1,4 @@
-import { getProduct, getProducts } from '@/sanity/sanity-utils';
+import { getProduct } from '@/sanity/sanity-utils';
 import React from 'react'
 
 type Props ={

@@ -79,7 +79,6 @@ span.text-red {
 .logo {
   color: gray;
   font-size: 18px;
-
 }
 
 .cart-icon {
@@ -99,6 +98,7 @@ span.text-red {
 .cart-item-qty {
   position: absolute;
   right: -8px;
+  top: -8px;
   font-size: 12px;
   color: #eee;
   background-color: #f02d34;
