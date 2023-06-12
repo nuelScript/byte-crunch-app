@@ -110,7 +110,7 @@ const UserMenu: React.FC<UserMenuProps> = ({ currentUser }) => {
                 </MenuItem>
                 <MenuItem href="/cart">Cart</MenuItem>
                 <hr />
-                <MenuItem onClick={() => signOut()}>Logout</MenuItem>
+                <MenuItem onClick={() => signOut({callbackUrl: '/'})}>Logout</MenuItem>
               </>
             ) : (
               <>

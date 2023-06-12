@@ -19,7 +19,7 @@ module.exports = {
       colors: {
         buttoncolor: "#F79327",
         primarycolor2: "#FFF0AA",
-        neutralcolor1: "D9D9D9",
+        neutralcolor1: "#D9D9D9",
         neutralcolor2: "#FFFFFF",
         neutralcolor3: "#000000",
       },
