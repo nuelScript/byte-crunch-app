@@ -25,12 +25,12 @@ const HeroBanner = ({heroBanner}: any) => {
             </button>
           </div>
         </div>
-        <div className="h-full w-1/2">
+        <div className="h-full w-2/6">
           <img
             src={heroBanner.image}
             alt="food carousel"
-            width={500}
-            height={500}
+            width={300}
+            height={300}
           />
         </div>
       </div>

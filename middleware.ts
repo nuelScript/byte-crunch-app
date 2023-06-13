@@ -4,5 +4,7 @@ export const config = {
     matcher: [
         '/homepage',
         '/cart',
+        '/admin',
+        '/vendors',
     ]
 }
