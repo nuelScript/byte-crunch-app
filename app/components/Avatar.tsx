@@ -1,26 +1,29 @@
-'use client';
+"use client";
 
-import { placeholder } from '@/public/images';
-import Image from 'next/image';
+import { placeholder } from "@/public/images";
+import Image from "next/image";
+import { FaRegUserCircle, FaUser, FaUserCircle } from "react-icons/fa";
 
 interface AvatarProps {
-    src: string | null | undefined;
+  src: string | null | undefined;
+}
+
+const Avatar: React.FC<AvatarProps> = ({ src }) => {
+  return (
+    <div className="">
+      {src ? (
+        <Image
+          className="rounded-full"
+          height="30"
+          width="30"
+          alt="Avatar"
+          src={src || placeholder}
+        />
+      ) : (
+        <FaRegUserCircle size={25} />
+      )}
+    </div>
+  );
 };
 
-const Avatar: React.FC<AvatarProps> = ({
-    src
-}) => {
-    return ( 
-        <div className="">
-            <Image
-                className='rounded-full'
-                height="30"
-                width="30"
-                alt='Avatar'
-                src={src || placeholder}
-            />
-        </div>
-     );
-}
- 
 export default Avatar;
