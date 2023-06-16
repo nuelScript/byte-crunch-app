@@ -2,7 +2,7 @@
 
 import { placeholder } from "@/public/images";
 import Image from "next/image";
-import { FaRegUserCircle, FaUser, FaUserCircle } from "react-icons/fa";
+import { FaRegUserCircle } from "react-icons/fa";
 
 interface AvatarProps {
   src: string | null | undefined;

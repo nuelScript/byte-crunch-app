@@ -13,7 +13,7 @@ export default async function VendorDetails({params}: Props) {
 
   return (
       <div>
-        <img src={vendor.image} alt="" />
+        <img src={vendor.image} alt={vendor.details} />
       </div>
   )
 }

@@ -5,7 +5,7 @@ import Logo from "./Logo";
 import Search from "./Search";
 import UserMenu from "./UserMenu";
 import { SafeUser } from "@/app/types";
-import { AiOutlineShopping } from "react-icons/ai";
+import { AiOutlineShoppingCart } from "react-icons/ai";
 import useLoginModal from "@/app/hooks/useLoginModal";
 import { useCallback } from "react";
 import Link from 'next/link';
@@ -50,7 +50,7 @@ const Navbar: React.FC<NavbarProps> = ({ currentUser }) => {
                 className="relative cursor-pointer border-none bg-transparent text-2xl text-gray-500 transition-transform hover:scale-110"
                 type="button"
               >
-                <AiOutlineShopping />
+                <AiOutlineShoppingCart />
                 <span className="absolute -right-2 -top-2 h-[18px] w-[18px] rounded-full bg-red-500 text-center text-xs font-semibold text-white">
                   1
                 </span>

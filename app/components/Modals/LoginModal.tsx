@@ -36,7 +36,7 @@ const LoginModal = () => {
 
         signIn('credentials', {
             ...data,
-            callbackUrl: '/homepage'
+            callbackUrl: '/home'
         })
         .then((callback) => {
             setIsLoading(false);

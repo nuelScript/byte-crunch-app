@@ -3,7 +3,7 @@ import Link from 'next/link';
 
 interface VendorProps {
   vendor: {
-    image: string | string[];
+    image: string;
     name: string;
     slug: {
       current: string;

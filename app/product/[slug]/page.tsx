@@ -16,7 +16,7 @@ export default async function ProductDetails({params}: Props) {
       <div className="product-detail-container">
         <div>
           <div className="image-container">
-            <img src={product.image && product.image[0]}/>
+            <img src={product.image && product.image[0]} alt={product.details}/>
           </div>
         </div>
       </div>

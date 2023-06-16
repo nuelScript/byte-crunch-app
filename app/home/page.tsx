@@ -19,7 +19,7 @@ export default async function Home() {
         <div className="text-center my-8 mx-0 text-black">
           <h2 className="text-3xl font-bold">Popular Meals</h2>
         </div>
-        <div className="mt-5 flex w-full flex-wrap justify-center gap-4">
+        <div className="mt-5 flex w-full flex-wrap justify-center gap-8">
           {products?.map((product) => (
             <Product key={product._id} product={product} />
           ))}{" "}
@@ -28,7 +28,7 @@ export default async function Home() {
         <div className="text-center mt-20 my-8 mx-0 text-black">
             <h2 className="text-3xl font-bold">Vendors</h2>
         </div>
-        <div className="mt-5 flex w-full flex-wrap justify-center gap-4">
+        <div className="mt-5 flex w-full flex-wrap justify-center gap-8">
             {vendors?.map((vendor) => (
               <Vendors key={vendor._id} vendor={vendor} />
             ))}
