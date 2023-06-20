@@ -3,9 +3,6 @@
 
 import { useMemo, useRef, useState } from "react";
 import Container from "../components/Container";
-import { Order } from "../types";
-import { getRandomOrders } from "../libs/generateDummyData";
-import CartCard from "./CartCard";
 import { useStateContext } from "@/context/StateContext";
 import { AiOutlineShopping } from "react-icons/ai";
 import Link from "next/link";

@@ -26,7 +26,7 @@ export default async function Home() {
         </div>
         <div className="mx-0 my-8 mt-20 text-center text-black">
           <Link href="/vendors">
-            <h2 className="text-3xl font-bold">Vendors</h2>
+            <h2 className="text-3xl font-bold hover:underline">Vendors</h2>
           </Link>
         </div>
         <div className="mt-5 flex w-full flex-wrap justify-center gap-8">
