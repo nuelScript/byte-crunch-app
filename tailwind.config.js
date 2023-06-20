@@ -15,6 +15,10 @@ module.exports = {
         slideUp: {
           to: { transform: "translateY(-100%)", opacity: "0" },
         },
+        marquee: {
+          "0%": { transform: "translateX(0%)" },
+          "to": { transform: "translateX(-50%)" }
+        }
       },
       colors: {
         buttoncolor: "#F79327",
@@ -26,6 +30,7 @@ module.exports = {
       animation: {
         "slide-down": "slideDown 0.5s ease-in-out forwards",
         "slide-up": "slideUp 0.5s ease-in-out forwards",
+        "marquee": "marquee 15s linear infinite"
       },
     },
   },

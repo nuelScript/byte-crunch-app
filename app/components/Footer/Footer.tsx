@@ -1,4 +1,4 @@
-'use client';
+"use client";
 
 import Link from "next/link";
 import {
@@ -11,10 +11,10 @@ import {
 import SectionList from "./SectionList";
 const Footer = () => {
   return (
-    <div className="h-[30vh] w-screen bg-neutralcolor3 text-white flex">
-      <div className="w-2/5 flex flex-col items-center justify-center">
+    <div className="flex h-[30vh] w-screen bg-neutralcolor3 text-white">
+      <div className="flex w-2/5 flex-col items-center justify-center">
         <p className="text-3xl font-bold">Byte & Crunch</p>
-        <div className="text-white flex flex-col md:flex md:flex-row my-4 [&>*]:mx-4">
+        <div className="my-4 flex flex-col text-white md:flex md:flex-row [&>*]:mx-4">
           <Link className="mt-4 md:mt-0" href={""}>
             <FaFacebookF />
           </Link>

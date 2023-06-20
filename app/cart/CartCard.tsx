@@ -1,12 +1,13 @@
+/* eslint-disable @next/next/no-img-element */
 import { Order } from "../types";
 import { TbCurrencyNaira } from "react-icons/tb";
 import { MdOutlineCancel } from "react-icons/md";
 
 interface CartInterface {
   order: Order;
-  removeOrder: VoidFunction;
+  // removeOrder: VoidFunction;
 }
-const CartCard = ({ order, removeOrder }: CartInterface) => {
+const CartCard = ({ order }: CartInterface) => {
   return (
     <div className="my-8 flex items-center border-b-2 border-dashed border-black py-4 ">
       <div className="h-full w-1/5 pe-4">
@@ -33,11 +34,7 @@ const CartCard = ({ order, removeOrder }: CartInterface) => {
         <span>{order.product.price}</span>
       </div>
       <div className="h-full w-1/5 ">
-        <MdOutlineCancel
-          className="mx-auto hover:cursor-pointer"
-          onClick={removeOrder}
-          size={25}
-        />
+        <MdOutlineCancel className="mx-auto hover:cursor-pointer" size={25} />
       </div>
     </div>
   );

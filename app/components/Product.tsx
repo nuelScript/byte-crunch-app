@@ -1,21 +1,19 @@
+/* eslint-disable @next/next/no-img-element */
 import React from "react";
 import Link from "next/link";
-import { TbCurrencyNaira } from 'react-icons/tb';
+import { TbCurrencyNaira } from "react-icons/tb";
 
 interface ProductProps {
   product: {
     image: string | string[];
     name: string;
-    slug: {
-      current: string;
-    };
+    slug: string;
     price: number;
     details: string;
   };
 }
 
-
-const Product: React.FC<ProductProps> = ({ product }) => {
+const ProductComponent: React.FC<ProductProps> = ({ product }) => {
   return (
     <div>
       <Link href={`/product/${product.slug}`}>
@@ -24,7 +22,8 @@ const Product: React.FC<ProductProps> = ({ product }) => {
             src={product.image && product.image[0]}
             width={350}
             height={250}
-            className="block scale-100 rounded-t-2xl bg-[#ebebeb] object-cover transition h-[300px]"
+            className="block h-[300px] scale-100 rounded-t-2xl bg-[#ebebeb] object-cover transition"
+            alt={product.name}
           />
           <div className="flex h-[150px] w-full flex-col justify-between rounded-b-2xl bg-white px-4">
             <p className="pl-2 font-medium">{product.name}</p>
@@ -34,12 +33,14 @@ const Product: React.FC<ProductProps> = ({ product }) => {
                 <TbCurrencyNaira className="mb-0.5 inline" size={20} />
                 {product.price}
               </div>
-              <button
-                type="button"
-                className="h-fit w-fit rounded-full bg-buttoncolor px-5 py-2 text-center text-lg font-medium text-white hover:opacity-70"
-              >
-                Order Now
-              </button>
+              <Link href="/cart">
+                <button
+                  type="button"
+                  className="h-fit w-fit rounded-full bg-buttoncolor px-5 py-2 text-center text-lg font-medium text-white hover:opacity-70"
+                >
+                  Order Now
+                </button>
+              </Link>
             </div>
           </div>
         </div>
@@ -48,4 +49,4 @@ const Product: React.FC<ProductProps> = ({ product }) => {
   );
 };
 
-export default Product;
+export default ProductComponent;
