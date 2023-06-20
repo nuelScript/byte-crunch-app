@@ -1,21 +1,19 @@
+/* eslint-disable @next/next/no-img-element */
 import React from "react";
 import Link from "next/link";
-import { TbCurrencyNaira } from 'react-icons/tb';
+import { TbCurrencyNaira } from "react-icons/tb";
 
 interface ProductProps {
   product: {
     image: string | string[];
     name: string;
-    slug: {
-      current: string;
-    };
+    slug: string;
     price: number;
     details: string;
   };
 }
 
-
-const Product: React.FC<ProductProps> = ({ product }) => {
+const ProductComponent: React.FC<ProductProps> = ({ product }) => {
   return (
     <div>
       <Link href={`/product/${product.slug}`}>
@@ -25,6 +23,7 @@ const Product: React.FC<ProductProps> = ({ product }) => {
             width={350}
             height={250}
             className="block h-[300px] scale-100 rounded-t-2xl bg-[#ebebeb] object-cover transition"
+            alt={product.name}
           />
           <div className="flex h-[150px] w-full flex-col justify-between rounded-b-2xl bg-white px-4">
             <p className="pl-2 font-medium">{product.name}</p>
@@ -50,4 +49,4 @@ const Product: React.FC<ProductProps> = ({ product }) => {
   );
 };
 
-export default Product;
+export default ProductComponent;

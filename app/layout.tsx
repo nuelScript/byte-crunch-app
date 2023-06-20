@@ -5,7 +5,8 @@ import { Lexend_Deca } from "next/font/google";
 import ToasterProvider from "./providers/ToasterProvider";
 import LoginModal from "./components/Modals/LoginModal";
 import getCurrentUser from "./actions/getCurrentUser";
-import Footer from "./components/Footer/Footer";
+import { StateContext } from "@/context/StateContext";
+import { Toaster } from "react-hot-toast";
 
 export const metadata = {
   title: "Byte & Crunch",
@@ -26,11 +27,14 @@ export default async function RootLayout({
   return (
     <html lang="en">
       <body className={font.className}>
-        <ToasterProvider />
-        <LoginModal />
-        <RegisterModal />
-        <Navbar currentUser={currentUser} />
-        {children}
+        <StateContext>
+          <Toaster />
+          <ToasterProvider />
+          <LoginModal />
+          <RegisterModal />
+          <Navbar currentUser={currentUser} />
+          {children}
+        </StateContext>
       </body>
     </html>
   );

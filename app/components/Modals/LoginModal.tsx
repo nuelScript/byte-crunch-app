@@ -88,7 +88,7 @@ const LoginModal = () => {
           outline
           label="Continue with Google"
           icon={FcGoogle}
-          onClick={() => signIn("google", { callbackUrl: "/homepage" })}
+          onClick={() => signIn("google", { callbackUrl: "/home" })}
         />
         <div className="mt-4 text-center font-light text-neutral-500">
           <div className="flex flex-row items-center justify-center gap-2">

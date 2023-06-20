@@ -3,7 +3,7 @@ export type Product ={
     _createdAt: Date;
     name: string;
     slug: string;
-    image: string;
+    image: string[];
     details: string;
     price: number;
 }
