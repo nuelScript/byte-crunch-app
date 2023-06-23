@@ -27,6 +27,8 @@ const RegisterModal = () => {
     } = useForm<FieldValues>({
         defaultValues: {
             name: "",
+            hall: "",
+            roomNo: "",
             email: "",
             password: "",
         },
@@ -67,6 +69,22 @@ const RegisterModal = () => {
             <Input
                 id="email"
                 label="Email"
+                disabled={isLoading}
+                register={register}
+                errors={errors}
+                required
+            />
+            <Input
+                id="hall"
+                label="Hall"
+                disabled={isLoading}
+                register={register}
+                errors={errors}
+                required
+            />
+            <Input
+                id="roomNo"
+                label="Room No"
                 disabled={isLoading}
                 register={register}
                 errors={errors}

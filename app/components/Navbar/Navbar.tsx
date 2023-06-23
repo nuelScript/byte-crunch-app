@@ -10,12 +10,14 @@ import useLoginModal from "@/app/hooks/useLoginModal";
 import { useCallback } from "react";
 import Link from "next/link";
 import { useStateContext } from "@/context/StateContext";
+import { twMerge } from "tailwind-merge";
 
 interface NavbarProps {
   currentUser?: SafeUser | null;
+  className?: string;
 }
 
-const Navbar: React.FC<NavbarProps> = ({ currentUser }) => {
+const Navbar: React.FC<NavbarProps> = ({ currentUser, className }) => {
   const { showCart, setShowCart, totalQuantity } = useStateContext();
   const loginModal = useLoginModal();
 
@@ -27,7 +29,7 @@ const Navbar: React.FC<NavbarProps> = ({ currentUser }) => {
     // Open Cart Page
   }, [currentUser, loginModal]);
   return (
-    <div className="sticky top-0 z-10 w-full bg-white shadow-sm">
+    <div className={twMerge('sticky top-0 z-10 w-full bg-white shadow-sm', className)}>
       <div
         className="
         border-b-[1px]

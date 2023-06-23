@@ -2,7 +2,7 @@ import HeroBanner from "../components/Banner/HeroBanner";
 import { getBanners, getProducts, getVendors } from "@/sanity/sanity-utils";
 import ProductComponent from "../components/Product";
 import Footer from "../components/Footer/Footer";
-import Vendors from "../components/Vendors";
+import VendorComponent from "../components/Vendors";
 import Link from "next/link";
 
 export default async function Home() {
@@ -31,7 +31,7 @@ export default async function Home() {
         </div>
         <div className="mt-5 flex w-full flex-wrap justify-center gap-8">
           {vendors?.map((vendor) => (
-            <Vendors key={vendor._id} vendor={vendor} />
+            <VendorComponent key={vendor._id} vendor={vendor} />
           ))}
           {/* map through all vendors and display them */}
         </div>

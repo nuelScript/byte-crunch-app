@@ -33,7 +33,7 @@ const ProductComponent: React.FC<ProductProps> = ({ product }) => {
                 <TbCurrencyNaira className="mb-0.5 inline" size={20} />
                 {product.price}
               </div>
-              <Link href="/cart">
+              <Link href={`/product/${product.slug}`}>
                 <button
                   type="button"
                   className="h-fit w-fit rounded-full bg-buttoncolor px-5 py-2 text-center text-lg font-medium text-white hover:opacity-70"

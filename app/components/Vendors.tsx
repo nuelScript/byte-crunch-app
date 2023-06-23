@@ -1,4 +1,3 @@
-
 /* eslint-disable @next/next/no-img-element */
 
 import React from "react";
@@ -15,7 +14,7 @@ interface VendorProps {
   };
 }
 
-const Vendors: React.FC<VendorProps> = ({ vendor }) => {
+const VendorComponent: React.FC<VendorProps> = ({ vendor }) => {
   return (
     <div>
       <Link href={`/vendor/${vendor.slug}`}>
@@ -36,4 +35,4 @@ const Vendors: React.FC<VendorProps> = ({ vendor }) => {
   );
 };
 
-export default Vendors;
+export default VendorComponent;
