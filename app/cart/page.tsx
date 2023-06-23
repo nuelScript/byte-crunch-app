@@ -163,8 +163,7 @@ const CartPage = () => {
             </button>
           </div>
         </div>
-      )}
-      
+      )}      
     </Container>
   );
 };
