@@ -154,16 +154,17 @@ const CartPage = () => {
               </span>
             </p>
           </div>
+          <div className="mt-16 flex h-fit w-full justify-center">
+            <button
+              type="button"
+              className="w-[220px] rounded-2xl bg-buttoncolor p-3 py-3.5 text-xl font-bold text-white"
+            >
+              Confirm Order
+            </button>
+          </div>
         </div>
       )}
-      <div className="mt-16 flex h-fit w-full justify-center">
-        <button
-          type="button"
-          className="w-[220px] rounded-2xl bg-buttoncolor p-3 py-3.5 text-xl font-bold text-white"
-        >
-          Confirm Order
-        </button>
-      </div>
+      
     </Container>
   );
 };
