@@ -24,6 +24,8 @@ interface StateContextValues {
   decQty: () => void;
   onAdd: (product: Product, quantity: number) => void;
   setShowCart: (value: boolean) => void;
+  // toggleCartItemQuantity: (id: number, value: string) => void;
+  onRemove: (product: any) => void;
 }
 
 export const UserContext = createContext<StateContextValues>({
@@ -36,6 +38,8 @@ export const UserContext = createContext<StateContextValues>({
   incQty: () => {},
   onAdd: () => {},
   setShowCart: () => {},
+  // toggleCartItemQuantity: () => {},
+  onRemove: () => {},
 });
 
 export const StateContext = ({ children }: StateContextProps) => {
@@ -45,7 +49,7 @@ export const StateContext = ({ children }: StateContextProps) => {
   const [totalQuantity, setTotalQuantity] = useState<number>(0);
   const [qty, setQty] = useState(1);
 
-  let foundProduct;
+  let foundProduct: any;
   let index;
 
   const onAdd = (product: any, quantity: number) => {
@@ -75,20 +79,41 @@ export const StateContext = ({ children }: StateContextProps) => {
     toast.success(`${qty} ${product.name} added to cart.`);
   };
 
-  const toggleCartItemQuantity = (id: string, value: string) => {
-    foundProduct = cartItems.find((item: any) => item._id === id);
-    index = cartItems.findIndex((product: any) => product._id === id);
-
-    if (value === "inc") {
-      let newCartItems = [
-        ...cartItems,
-        { ...foundProduct, quantity: foundProduct.quantity + 1 },
-      ];
-      setCartItems(newCartItems);
-    } else if (value === "dec") {
-      foundProduct.quantity--;
-    }
+  const onRemove = (product: any) => {
+    foundProduct = cartItems.find((item: any) => item._id === product._id);
+    setTotalPrice(
+      (prevTotalPrice) =>
+        prevTotalPrice - foundProduct.price * foundProduct.quantity
+    );
+    setTotalQuantity(
+      (prevTotalQuantity) => prevTotalQuantity - foundProduct.quantity
+    );
+    setCartItems(cartItems.filter((item: any) => item._id !== product._id));
   };
+
+  // const toggleCartItemQuantity = (id: number, value: string) => {
+  //   foundProduct = cartItems.find((item: any) => item._id === id);
+  //   index = cartItems.findIndex((product: any) => product._id === id);
+  //   const newCartItems = cartItems.splice(index, 1);
+
+  //   if (value === "inc") {
+  //     setCartItems([
+  //       ...newCartItems,
+  //       { ...foundProduct, quantity: foundProduct.quantity + 1 },
+  //     ]);
+  //     setTotalPrice((prevTotalPrice) => prevTotalPrice + foundProduct.price);
+  //     setTotalQuantity((prevTotalQuantity) => prevTotalQuantity + 1);
+  //   } else if (value === "dec") {
+  //     if (foundProduct.quantity > 1) {
+  //       setCartItems([
+  //         ...newCartItems,
+  //         { ...foundProduct, quantity: foundProduct.quantity - 1 },
+  //       ]);
+  //       setTotalPrice((prevTotalPrice) => prevTotalPrice - foundProduct.price);
+  //       setTotalQuantity((prevTotalQuantity) => prevTotalQuantity - 1);
+  //     }
+  //   }
+  // };
 
   const incQty = () => {
     setQty((prevQty) => prevQty + 1);
@@ -111,6 +136,8 @@ export const StateContext = ({ children }: StateContextProps) => {
     incQty,
     decQty,
     onAdd,
+    // toggleCartItemQuantity,
+    onRemove,
   };
 
   return <UserContext.Provider value={value}>{children}</UserContext.Provider>;

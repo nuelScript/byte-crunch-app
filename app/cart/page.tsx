@@ -63,7 +63,7 @@ import { MdOutlineCancel } from "react-icons/md";
 
 const CartPage = () => {
   const cartRef = useRef<HTMLDivElement>(null);
-  const { totalPrice, totalQuantity, cartItems, setShowCart } =
+  const { totalPrice, totalQuantity, cartItems, setShowCart, onRemove } =
     useStateContext();
 
   return (
@@ -80,7 +80,7 @@ const CartPage = () => {
           <Link href={"/home"}>
             <button
               type="button"
-              className="mt-10 w-full max-w-[400px] scale-100 cursor-pointer rounded-2xl border-none bg-buttoncolor px-3 py-[10px] text-sm uppercase text-white transition hover:scale-110"
+              className="mt-10 w-full max-w-[400px] scale-100 cursor-pointer rounded-2xl border-none bg-buttoncolor px-5 py-[15px] text-sm uppercase text-white transition hover:scale-110"
             >
               Continue Shopping
             </button>
@@ -120,6 +120,7 @@ const CartPage = () => {
               </div>
               <div className="h-full w-1/5 ">
                 <MdOutlineCancel
+                  onClick={() => onRemove(item)}
                   className="mx-auto hover:cursor-pointer"
                   size={25}
                 />
@@ -154,16 +155,16 @@ const CartPage = () => {
               </span>
             </p>
           </div>
+          <div className="mt-16 flex h-fit w-full justify-center">
+            <button
+              type="button"
+              className="w-[220px] rounded-2xl bg-buttoncolor p-3 py-3.5 text-xl font-bold text-white"
+            >
+              Confirm Order
+            </button>
+          </div>
         </div>
       )}
-      <div className="mt-16 flex h-fit w-full justify-center">
-        <button
-          type="button"
-          className="w-[220px] rounded-2xl bg-buttoncolor p-3 py-3.5 text-xl font-bold text-white"
-        >
-          Confirm Order
-        </button>
-      </div>
     </Container>
   );
 };
