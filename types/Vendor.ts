@@ -1,3 +1,5 @@
+import { Product } from "./Product";
+
 export type Vendor = {
     _id: string;
     _createdAt: Date;
@@ -5,4 +7,12 @@ export type Vendor = {
     slug: string;
     image: string;
     details: string;
+    product: {
+        name: string;
+        slug: string;
+        price: number;
+        details: string;
+        image: string[];
+        size: string[];
+    }[];
 }

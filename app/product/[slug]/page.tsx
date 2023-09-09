@@ -12,6 +12,9 @@ import { TbCurrencyNaira } from "react-icons/tb";
 import React, { useEffect, useState } from "react";
 import ProductComponent from "@/app/components/Product";
 import { UserContext, useStateContext } from "@/context/StateContext";
+import axios from "axios";
+import { Product } from "@/types/Product";
+import Quantity from "./components/quantity";
 
 type Props = {
   param: {
@@ -21,8 +24,12 @@ type Props = {
 
 const fetchData = async (slug: string) => {
   return {
-    product: await getProduct(slug),
-    products: await getProducts(),
+    product: await axios
+      .get<Product>(`/api/products/${slug}`)
+      .then((res) => res.data),
+    products: await axios
+      .get<Product[]>("/api/products")
+      .then((res) => res.data),
   };
 };
 
@@ -80,28 +87,7 @@ export default async function ProductDetails({
             <TbCurrencyNaira className="m-0 mb-1 inline-block" />{" "}
             {product.price}
           </p>
-          <div className="mt-[10px] flex items-center gap-5">
-            <h3>Quantity:</h3>
-            <p className="border border-solid border-black p-[4px]">
-              <span
-                className="cursor-pointer border-r border-solid border-black px-3 py-[6px] text-xl text-black"
-                onClick={decQty}
-              >
-                <AiOutlineMinus className="inline-block" />
-              </span>
-              <span className="cursor-pointer border-r border-solid border-black px-3 py-[6px] text-xl text-black">
-                {qty}
-              </span>
-              <span
-                className="cursor-pointer px-3 py-[6px] text-xl text-black"
-                onClick={() => {
-                  incQty();
-                }}
-              >
-                <AiOutlinePlus className="inline-block" />
-              </span>
-            </p>
-          </div>
+          <Quantity />
           <div className="flex gap-8">
             <button
               type="button"

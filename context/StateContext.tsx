@@ -52,27 +52,25 @@ export const StateContext = ({ children }: StateContextProps) => {
   let foundProduct: any;
   let index;
 
-  const onAdd = (product: any, quantity: number) => {
+  const onAdd = (product: any) => {
     const checkProductInCart = cartItems.find(
       (item: any) => item._id === product._id
     );
 
-    setTotalPrice(
-      (prevTotalPrice) => prevTotalPrice + product.price * quantity
-    );
-    setTotalQuantity((prevTotalQuantity) => prevTotalQuantity + quantity);
+    setTotalPrice((prevTotalPrice) => prevTotalPrice + product.price * qty);
+    setTotalQuantity((prevTotalQuantity) => prevTotalQuantity + qty);
 
     if (checkProductInCart) {
       const updatedCartItems = cartItems.map((cartProduct: any) => {
         if (cartProduct._id === product._id) {
-          return { ...cartProduct, quantity: cartProduct.quantity + quantity };
+          return { ...cartProduct, quantity: cartProduct.quantity + qty };
         }
         return cartProduct;
       });
 
       setCartItems(updatedCartItems);
     } else {
-      product.quantity = quantity;
+      product.quantity = qty;
 
       setCartItems([...cartItems, { ...product }]);
     }

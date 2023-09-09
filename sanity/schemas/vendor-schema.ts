@@ -29,6 +29,15 @@ const vendor = {
             name: 'details',
             title: 'Details',
             type: 'string',
+        },
+        {
+            name: 'product',
+            title: 'Product',
+            type: 'array',
+            of: [{
+                type: 'reference',
+                to: [{ type: 'product' }]
+            }]
         }
     ]
 }

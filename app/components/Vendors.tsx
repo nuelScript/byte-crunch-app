@@ -1,15 +1,12 @@
-/* eslint-disable @next/next/no-img-element */
-
 import React from "react";
 import Link from "next/link";
+import Image from "next/image";
 
 interface VendorProps {
   vendor: {
     image: string;
     name: string;
-    slug: {
-      current: string;
-    };
+    slug: string;
     details: string;
   };
 }
@@ -19,7 +16,7 @@ const VendorComponent: React.FC<VendorProps> = ({ vendor }) => {
     <div>
       <Link href={`/vendor/${vendor.slug}`}>
         <div className="relative mb-16 h-[350px] w-[350px] scale-100 cursor-pointer rounded-2xl transition hover:scale-110">
-          <img
+          <Image
             src={vendor.image}
             width={350}
             height={250}

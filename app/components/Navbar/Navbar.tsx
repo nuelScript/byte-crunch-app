@@ -29,10 +29,15 @@ const Navbar: React.FC<NavbarProps> = ({ currentUser, className }) => {
     // Open Cart Page
   }, [currentUser, loginModal]);
   return (
-    <div className={twMerge('sticky top-0 z-10 w-full bg-white shadow-sm', className)}>
+    <div
+      className={twMerge(
+        "sticky top-0 z-10 w-full bg-white shadow-sm",
+        className
+      )}
+    >
       <div
         className="
-        border-b-[1px]
+        border-b
         py-4"
       >
         <Container>

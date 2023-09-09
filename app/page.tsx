@@ -2,12 +2,10 @@
 "use client";
 
 import React from "react";
-import useRegisterModal from "./hooks/useRegisterModal";
+import { FaInstagram, FaSnapchatGhost, FaTwitter } from "react-icons/fa";
 
 
 const LandingPage = () => {
-  const registerModal = useRegisterModal();
-
   return (
     <div className="grid pt-10 lg:pt-5 w-full grid-cols-1 overflow-x-hidden md:grid-cols-2 grid-rows-1 gap-2 md:gap-8 bg-[#FFE569] p-5 md:p-20">
 
@@ -48,9 +46,7 @@ const LandingPage = () => {
               <span className="text-base md:text-xl stroke-[0.7px]">Seconds</span>
             </div>
           </div>
-
         </div>
-
         <p className="mt-6 md:mt-8">
           <span className="text-justify text-xl md:text-xl">
             Byte & Crunch is an application created exclusively for Covenant University students, aimed

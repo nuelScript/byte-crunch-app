@@ -1,14 +1,14 @@
 import Footer from "../components/Footer/Footer";
 
-export default async function RootLayout ({
-    children
+export default async function RootLayout({
+  children,
 }: {
-    children: React.ReactNode;
+  children: React.ReactNode;
 }) {
-    return (
-      <div className="w-full h-full">
-        {children}
-        <Footer />
-      </div>
-    );
+  return (
+    <div className="h-full w-full">
+      {children}
+      <Footer />
+    </div>
+  );
 }
