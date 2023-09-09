@@ -35,6 +35,26 @@ const product = {
             name: 'details',
             title: 'Details',
             type: 'string',
+        },
+        {
+            name: 'size',
+            title: 'Size',
+            type: 'array',
+            of: [{ type: 'string' }],
+            options: {
+                list: [
+                    { title: 'Small', value: 'S' },
+                    { title: 'Medium', value: 'M' },
+                    { title: 'Large', value: 'L' },
+                    { title: 'Extra Large', value: 'XL' },
+                ]
+            }
+        },
+        {
+            name: 'vendor',
+            title: 'Vendor',
+            type: 'reference',
+            to: [{ type: 'vendor' }]
         }
     ]
 }

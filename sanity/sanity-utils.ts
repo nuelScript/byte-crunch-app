@@ -1,11 +1,12 @@
 import { Product } from "@/types/Product";
-import { createClient, groq } from "next-sanity";
+import { createClient } from "@sanity/client";
+import { groq } from "next-sanity";
 import clientConfig from './config/client-config';
 import { Banner } from "@/types/Banner";
 import { Vendor } from "@/types/Vendor";
 
 export async function getProducts(): Promise<Product[]> {
-   
+
     return createClient(clientConfig).fetch(
         groq`*[_type == 'product']{
             _id,
@@ -14,13 +15,14 @@ export async function getProducts(): Promise<Product[]> {
             'slug': slug.current,
             'image': image[].asset->url,
              price,
-             details
+             details,
+             size[]
         }`
     );
 };
 
 export async function getBanners(): Promise<Banner[]> {
-   
+
     return createClient(clientConfig).fetch(
         groq`*[_type == 'banner']{
             _id,
@@ -48,7 +50,8 @@ export async function getProduct(slug: string): Promise<Product> {
             'slug': slug.current,
             'image': image[].asset->url,
              price,
-             details
+             details,
+             size[]
         }`,
         { slug }
     );
@@ -62,7 +65,8 @@ export async function getVendors(): Promise<Vendor[]> {
             name,
             'slug': slug.current,
             'image': image.asset->url,
-             details
+             details,
+             product[]->{name, slug, price, details, 'image': image[].asset->url, size[]}
         }`
     );
 }
@@ -75,7 +79,8 @@ export async function getVendor(slug: string): Promise<Vendor> {
             name,
             'slug': slug.current,
             'image': image.asset->url,
-             details
+             details,
+             product[]->{name, slug, price, details, 'image': image[].asset->url, size[]}
         }`,
         { slug }
     );

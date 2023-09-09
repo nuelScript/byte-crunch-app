@@ -2,6 +2,7 @@
 import React from "react";
 import Link from "next/link";
 import { TbCurrencyNaira } from "react-icons/tb";
+import Image from "next/image";
 
 interface ProductProps {
   product: {
@@ -18,7 +19,7 @@ const ProductComponent: React.FC<ProductProps> = ({ product }) => {
     <div>
       <Link href={`/product/${product.slug}`}>
         <div className="relative flex h-[480px] w-[350px] scale-100 cursor-pointer flex-col justify-between rounded-2xl bg-white drop-shadow-lg transition hover:scale-110">
-          <img
+          <Image
             src={product.image && product.image[0]}
             width={350}
             height={250}
