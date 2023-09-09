@@ -53,18 +53,22 @@ const Navbar: React.FC<NavbarProps> = ({ currentUser, className }) => {
           >
             <Logo />
             <Search />
+            <div className="flex">
             <UserMenu currentUser={currentUser} />
-            <Link onClick={onCart} href={"/cart"}>
+
+            <Link onClick={onCart} className="flex items-center" href={"/cart"}>
               <button
                 className="relative cursor-pointer border-none bg-transparent text-2xl text-gray-500 transition-transform hover:scale-110"
                 type="button"
               >
-                <AiOutlineShoppingCart />
+                <AiOutlineShoppingCart className=" flex"/>
                 <span className="absolute -right-2 -top-2 h-[18px] w-[18px] rounded-full bg-red-500 text-center text-xs font-semibold text-white">
                   {totalQuantity}
                 </span>
               </button>
             </Link>
+            </div>
+           
           </div>
         </Container>
       </div>
