@@ -1,5 +1,3 @@
-"use client";
-
 import HeroBanner from "../components/Banner/HeroBanner";
 import { getBanners, getProducts, getVendors } from "@/sanity/sanity-utils";
 import ProductComponent from "../components/Product";
@@ -12,21 +10,11 @@ import { Product } from "@/types/Product";
 import { Vendor } from "@/types/Vendor";
 
 export default async function Home() {
-  const [isMounted, setIsMounted] = useState(false);
-
-  useEffect(() => {
-    setIsMounted(true);
-  }, []);
-
   const products = await axios
     .get<Product[]>("/api/products")
     .then((res) => res.data);
   const banners = await getBanners();
-  const vendors = await axios
-    .get<Vendor[]>("/api/vendors")
-    .then((res) => res.data);
-
-  if (!isMounted) return null;
+  const vendors = await getVendors();
   return (
     <>
       <div>
